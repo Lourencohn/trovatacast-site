@@ -231,6 +231,7 @@ a {
 }
 
 .marca__sinal {
+  flex-shrink: 0;
   width: 1.75rem;
   height: 1.75rem;
 }
@@ -311,9 +312,6 @@ a {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--superficie));
 }
 
-.aparelho--baixo .aparelho__tela {
-  aspect-ratio: 720 / 760;
-}
 
 .abertura {
   display: grid;
@@ -321,6 +319,16 @@ a {
   align-items: center;
   gap: clamp(2rem, 5vw, 4.5rem);
   padding-block: clamp(2.5rem, 6vw, 5rem) var(--respiro);
+}
+
+.abertura h1 {
+  font-size: clamp(2.75rem, 5.6vw, 5.25rem);
+  line-height: 0.98;
+}
+
+.abertura h1 span {
+  display: block;
+  white-space: nowrap;
 }
 
 .abertura__lead {
@@ -565,8 +573,7 @@ a {
   margin-top: 3rem;
 }
 
-.destaque__texto p,
-.base__texto p {
+.destaque__texto p {
   margin-top: 0.85rem;
   color: var(--tinta-2);
   max-width: 44ch;
@@ -605,24 +612,7 @@ a {
   color: var(--tinta-2);
 }
 
-.base {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(2rem, 5vw, 4rem);
-  align-items: center;
-  margin-top: clamp(3.5rem, 8vw, 6rem);
-  padding: clamp(1.75rem, 4vw, 3rem);
-  background: var(--superficie);
-  border-radius: 28px;
-  border: 1px solid var(--linha);
-}
 
-.base__telas {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 220px));
-  gap: 1rem;
-  justify-content: center;
-}
 
 .lojista {
   padding-block: var(--respiro);
@@ -795,8 +785,7 @@ a {
 
   .passo,
   .passo:nth-child(even),
-  .destaque,
-  .base {
+  .destaque {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -959,10 +948,6 @@ a {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .base {
-    padding: 1.5rem;
-    border-radius: 22px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
